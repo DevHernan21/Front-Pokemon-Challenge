@@ -1,7 +1,7 @@
 import axios from "axios";
 
-const apiAxiosInstance = axios.create({
-  baseURL: "https://pokemonchallengeapiserver.azurewebsites.net",
+const apiAxiosGetAll = axios.create({
+  baseURL: "https://pokemonchallengeapiserver.azurewebsites.net/pokemon/",
 });
 
-export default apiAxiosInstance;
+export default apiAxiosGetAll;

@@ -32,7 +32,7 @@ export const Home: React.FC = () => {
         <img src={PokemonLogo} alt="Pokemon Logo" loading="lazy" />
       </Header>
       <SearchForm onSubmit={handleSubmit}>
-        <h1>Busca a tu Pokémon</h1>
+        <h1>Busca a un Pokémon</h1>
         <div className="input">
           <input
             type="text"
