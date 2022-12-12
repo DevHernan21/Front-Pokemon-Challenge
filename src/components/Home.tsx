@@ -11,11 +11,11 @@ export const Home: React.FC = () => {
   const history = useHistory();
   const [pokemonList, setPokemonList] = useState<IPokemonsInterface[]>([]);
   const [offset, setOffset] = useState(0);
-
+  const [limit, setLimit] = useState(20);
 
   useEffect(() => {
     const getData = async () => {
-      const pokemonsResp = await pokemonGetAll(20,offset)
+      const pokemonsResp = await pokemonGetAll(limit,offset)
       setPokemonList(pokemonsResp);
     }
     getData();
@@ -46,7 +46,7 @@ export const Home: React.FC = () => {
         <p>Tu Pokedex</p>
       </Heading>
       <PokemonContainer>
-        {pokemonList.length > 0 ? (pokemonList.map((pokemon, i) => {
+        {pokemonList?.length > 0 ? (pokemonList.map((pokemon, i) => {
           return (
             <>
               <Pokedex
@@ -65,7 +65,7 @@ export const Home: React.FC = () => {
       <ButtonContainer>
         <StyledButton
           onClick={() => {
-            setOffset(offset - 20);
+            setOffset(offset - limit);
           }}
           disabled={offset === 0}
         >
@@ -73,7 +73,7 @@ export const Home: React.FC = () => {
         </StyledButton>
         <StyledButton
           onClick={() => {
-            setOffset(offset + 20);
+            setOffset(offset + limit);
           }}
         >
           Siguiente
