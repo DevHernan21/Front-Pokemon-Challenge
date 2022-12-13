@@ -1,9 +1,7 @@
 import axios from "axios";
 
 const apiAxiosGetAll = axios.create({
-  baseURL: "https://pokemonchallengeapiserver.azurewebsites.net/",
-  // baseURL: "http://localhost:8080/pokemon",
-  // baseURL: "https://pokeapi.co/api/v2/pokemon/",
+  baseURL: "https://challenge-poke-api.onrender.com/pokemon",
 });
 
 export default apiAxiosGetAll;
